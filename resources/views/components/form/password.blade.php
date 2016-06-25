@@ -4,7 +4,7 @@
         'for' => $name,
     ]) }}
     <div class="col-sm-6">
-        {{ Form::text($name, $value, array_merge([
+        {{ Form::password($name, array_merge([
             'class' => 'form-control',
             'id' => $name,
         ]), $attributes) }}
