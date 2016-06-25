@@ -15,7 +15,7 @@ class BootstrapFormServiceProvider extends ServiceProvider
     public function boot()
     {
         Form::component('bsText', 'components.form.text', [
-            'name', 'attributes' => [], 'label' => null, 'value' => null
+            'name', 'value' => null, 'attributes' => [], 'label' => null
         ]);
         Form::component('bsPassword', 'components.form.password', [
             'name', 'attributes' => [], 'label' => null
