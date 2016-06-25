@@ -7,7 +7,7 @@
             <h1>Index User</h1>
             <hr>
             @if(count($objects) > 0)
-            <table class="table">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>#</th>
