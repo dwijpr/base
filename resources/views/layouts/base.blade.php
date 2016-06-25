@@ -23,9 +23,14 @@
         }
 
         @if(config('app.dark'))
-        .panel {
-            background: #444;
+        * {
             color: #ddd;
+        }
+        .panel, .table {
+            background: #444;
+        }
+        .table tr:hover td{
+            color: #222;
         }
         @endif
 
