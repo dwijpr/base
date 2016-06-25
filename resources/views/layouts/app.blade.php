@@ -1,7 +1,9 @@
 @extends('layouts.base')
 
 @section('_content')
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-{{ config(
+    'app.dark'
+)?'inverse':'default' }} navbar-static-top">
     <div class="container">
         <div class="navbar-header">
 

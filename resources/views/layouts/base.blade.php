@@ -17,7 +17,17 @@
     <style>
         body {
             font-family: 'Lato';
+            @if(config('app.dark'))
+            background: #222;
+            @endif
         }
+
+        @if(config('app.dark'))
+        .panel {
+            background: #444;
+            color: #ddd;
+        }
+        @endif
 
         .fa-btn {
             margin-right: 6px;
