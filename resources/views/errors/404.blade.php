@@ -1,5 +1,5 @@
 @extends('layouts.error')
 
 @section('content')
-    <div class="title">Be right back.</div>
+    <div class="title">Not Found.</div>
 @endsection
