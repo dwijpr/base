@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\User;
+use App\User, App\Role;
 
 class UserController extends Controller
 {
@@ -16,8 +16,13 @@ class UserController extends Controller
      */
     public function index()
     {
+        $adminUsers = Role::where('name', 'admin')->first()->users;
+        $adminIDs = [];
+        foreach ($adminUsers as $user) {
+            $adminIDs[] = $user->id;
+        }
         return view('users.index', [
-            'objects' => User::all(),
+            'objects' => User::whereNotIn('id', $adminIDs)->get(),
         ]);
     }
 

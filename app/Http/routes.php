@@ -17,9 +17,14 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::group(['middleware' => 'auth'], function ($router) {
-    $router->get('/home', 'HomeController@index');
+$router->get('/home', [
+    'uses' => 'HomeController@index',
+    'middleware' => 'auth',
+]);
+
+Route::group([
+    'middleware' => ['auth', 'roles'],
+    'roles' => 'admin',
+], function ($router) {
     $router->resource('/user', 'UserController');
-    $router->resource('/role', 'RoleController');
-    $router->resource('/permission', 'PermissionController');
 });

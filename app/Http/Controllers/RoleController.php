@@ -9,6 +9,9 @@ use App\Role;
 
 class RoleController extends Controller
 {
+    public function __construct() {
+        return abort('404');
+    }
     /**
      * Display a listing of the resource.
      *
