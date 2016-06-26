@@ -1,9 +1,17 @@
 @extends('layouts.base')
 
+@section('style')
+<style>
+    body {
+        padding-top: 70px;
+    }
+</style>
+@endsection
+
 @section('_content')
 <nav class="navbar navbar-{{ config(
     'app.dark'
-)?'inverse':'default' }} navbar-static-top">
+)?'inverse':'default' }} navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
 

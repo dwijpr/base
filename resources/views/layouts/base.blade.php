@@ -43,6 +43,10 @@
             display: inline-block;
             padding: 0 4px;
         }
+
+        footer {
+            padding: 32px 0;
+        }
     </style>
 
     @yield('style')
@@ -56,9 +60,11 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <a href="{{ url('') }}">
-                    &copy;{{ date('Y') }} {{ config('app.name') }}
-                </a>
+                <footer>
+                    <a href="{{ url('') }}">
+                        &copy;{{ date('Y') }} {{ config('app.name') }}
+                    </a>
+                </footer>
             </div>
         </div>
     </div>
