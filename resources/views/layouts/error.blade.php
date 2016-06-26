@@ -11,8 +11,6 @@
         padding: 0;
         width: 100%;
         color: #B0BEC5;
-        font-weight: 100;
-        font-family: 'Lato';
     }
 
     .content {
@@ -21,6 +19,7 @@
     }
 
     .title {
+        font-weight: 100;
         font-size: 72px;
         margin-bottom: 40px;
     }
