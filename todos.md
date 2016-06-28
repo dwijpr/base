@@ -1,4 +1,4 @@
 ToDos
 =====
 
-Add LaravelCollective HTML -> manage form
+Add global constant ~ user constant -> db seeding, tests
