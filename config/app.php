@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => 'Base',
+    'name' => 'base.dev',
 
     'dark' => true,
     /*
