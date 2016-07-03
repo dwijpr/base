@@ -166,6 +166,7 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
         App\Providers\BootstrapFormServiceProvider::class,
+        Orangehill\Iseed\IseedServiceProvider::class,
     ],
 
     /*
