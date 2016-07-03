@@ -24,6 +24,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function img() {
+        return asset('img/icon-'.config('app.sex')[$this->sex].'.svg');
+    }
+
     public function name() {
         return implode(' ', [
             $this->firstname, $this->lastname,

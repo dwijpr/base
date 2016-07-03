@@ -2,9 +2,14 @@
 
 return [
 
-    'name' => 'base.dev',
+    'name' => 'Base',
 
     'dark' => true,
+
+    'sex' => [
+        0 => 'female',
+        1 => 'male',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Environment

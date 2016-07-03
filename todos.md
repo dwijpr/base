@@ -3,4 +3,10 @@ ToDos
 
 - implement world cities database
 
-- profile picture default
+- Profile Feature
+
+    - profile picture default
+
+        - ~~navbar~~
+
+    - profile index design

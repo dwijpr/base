@@ -5,6 +5,13 @@
     body {
         padding-top: 70px;
     }
+    .navbar-pic {
+        background: #999;
+        padding: 2px;
+        border-radius: 2px;
+        max-width: 18px;
+        max-height: 18px;
+    }
 </style>
 @endsection
 
@@ -43,7 +50,17 @@
                     <li><a href="{{ url('/register') }}">Register</a></li>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <a
+                            href="#"
+                            class="dropdown-toggle"
+                            data-toggle="dropdown"
+                            role="button"
+                            aria-expanded="false"
+                        >
+                            <img
+                                class="navbar-pic"
+                                src="{{ Auth::user()->img() }}"
+                            >
                             {{ Auth::user()->name() }} <span class="caret"></span>
                         </a>
 
