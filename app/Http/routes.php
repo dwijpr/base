@@ -23,6 +23,12 @@ $router->get('/home', [
 ]);
 
 Route::group([
+    'middleware' => 'auth',
+], function ($router) {
+    $router->resource('/profile', 'ProfileController');
+});
+
+Route::group([
     'middleware' => ['auth', 'roles'],
     'roles' => 'admin',
 ], function ($router) {
