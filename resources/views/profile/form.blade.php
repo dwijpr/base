@@ -80,7 +80,11 @@
                     type="radio"
                     name="sex"
                     value="1"
+                    @if(old('sex') === null)
                     {{ Auth::user()->sex?'checked':'' }}
+                    @else
+                    {{ old('sex')?'checked':'' }}
+                    @endif
                 > Male
             </label>
             <label class="radio-inline">
@@ -88,7 +92,11 @@
                     type="radio"
                     name="sex"
                     value="0"
+                    @if(old('sex') === null)
                     {{ Auth::user()->sex?'':'checked' }}
+                    @else
+                    {{ old('sex')?'':'checked' }}
+                    @endif
                 > Female
             </label>    
         </div>
