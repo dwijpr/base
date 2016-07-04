@@ -3,7 +3,7 @@
 @section('style')
 <style>
     body {
-        padding-top: 70px;
+        padding-top: 50px;
     }
     .navbar-pic {
         background: #999;
@@ -13,6 +13,7 @@
         max-height: 18px;
     }
 </style>
+@yield('_style')
 @endsection
 
 @section('_content')

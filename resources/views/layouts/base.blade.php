@@ -17,6 +17,11 @@
         }
         @font-face {
             font-family: 'Lato';
+            src: url(thirdparty/fonts/Lato/Lato-Light.ttf);
+            font-weight: 200;
+        }
+        @font-face {
+            font-family: 'Lato';
             src: url(thirdparty/fonts/Lato/Lato-Bold.ttf);
             font-weight: bold;
         }
