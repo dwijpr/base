@@ -22,6 +22,15 @@ $router->get('/home', [
     'middleware' => 'auth',
 ]);
 
+$router->get('/password/change', [
+    'uses' => 'PasswordController@edit',
+    'middleware' => 'auth',
+]);
+$router->post('/password/change', [
+    'uses' => 'PasswordController@update',
+    'middleware' => 'auth',
+]);
+
 Route::group([
     'middleware' => 'auth',
 ], function ($router) {

@@ -73,6 +73,12 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="{{ url('/password/change') }}">
+                                    <i class="fa fa-btn fa-key"></i>
+                                    Change Password
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ url('/logout') }}">
                                     <i class="fa fa-btn fa-sign-out"></i>
                                     Logout

@@ -8,21 +8,21 @@
     <style>
         @font-face {
             font-family: 'Lato';
-            src: url(thirdparty/fonts/Lato/Lato-Regular.ttf);
+            src: url(/thirdparty/fonts/Lato/Lato-Regular.ttf);
         }
         @font-face {
             font-family: 'Lato';
-            src: url(thirdparty/fonts/Lato/Lato-Hairline.ttf);
+            src: url(/thirdparty/fonts/Lato/Lato-Hairline.ttf);
             font-weight: 100;
         }
         @font-face {
             font-family: 'Lato';
-            src: url(thirdparty/fonts/Lato/Lato-Light.ttf);
+            src: url(/thirdparty/fonts/Lato/Lato-Light.ttf);
             font-weight: 200;
         }
         @font-face {
             font-family: 'Lato';
-            src: url(thirdparty/fonts/Lato/Lato-Bold.ttf);
+            src: url(/thirdparty/fonts/Lato/Lato-Bold.ttf);
             font-weight: bold;
         }
     </style>
