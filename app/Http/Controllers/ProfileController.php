@@ -56,9 +56,9 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('profile.edit');
     }
 
     /**
@@ -68,9 +68,12 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $this->validate($request, [
+            'firstname' => 'required',
+            'lastname' => 'required',
+        ]);
     }
 
     /**

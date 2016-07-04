@@ -4,6 +4,7 @@
 <style>
     .content-wrapper {
         padding-top: 32px;
+        position: relative;
     }
     .profile img.main {
         background: #999;
@@ -23,6 +24,11 @@
     #profile-details-toggle i.fa {
         font-size: 24px;
     }
+    #profile-edit-btn {
+        position: absolute;
+        top: 16px;
+        right: 0;
+    }
 </style>
 @endsection
 
@@ -31,6 +37,14 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="content-wrapper">
+                <a
+                    id="profile-edit-btn"
+                    class="btn btn-default"
+                    href="{{ url('/profile/edit') }}"
+                >
+                    <i class="fa fa-btn fa-edit"></i>
+                    Edit Profile
+                </a>
                 <div class="profile">
                     <div class="profile-display text-center">
                         <img
@@ -63,7 +77,8 @@
                         </div>
                         <div>
                             <i class="fa fa-btn fa-birthday-cake"></i>
-                            25 y.o.
+                            {{ Auth::user()->dob()->format('M d, Y') }}
+                            (25 y.o.)
                         </div>
                     </div>
                 </div>
@@ -82,7 +97,7 @@
 @section('script')
 <script>
     $("#profile-details-toggle").click(function () {
-        $("#profile-details").slideToggle();
+        $("#profile-details").toggle();
         var fa = $(this).find('i.fa');
         if (fa.hasClass('fa-caret-down')) {
             fa.removeClass('fa-caret-down');

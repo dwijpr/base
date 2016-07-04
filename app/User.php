@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -23,6 +24,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function dob() {
+        return Carbon::parse($this->dob);
+    }
 
     public function img() {
         return asset('img/icon-'.config('app.sex')[$this->sex].'.svg');

@@ -31,11 +31,18 @@ $router->post('/password/change', [
     'middleware' => 'auth',
 ]);
 
-Route::group([
+$router->get('/profile', [
+    'uses' => 'ProfileController@index',
     'middleware' => 'auth',
-], function ($router) {
-    $router->resource('/profile', 'ProfileController');
-});
+]);
+$router->get('/profile/edit', [
+    'uses' => 'ProfileController@edit',
+    'middleware' => 'auth',
+]);
+$router->patch('/profile', [
+    'uses' => 'ProfileController@update',
+    'middleware' => 'auth',
+]);
 
 Route::group([
     'middleware' => ['auth', 'roles'],
