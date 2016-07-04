@@ -13,7 +13,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email',
+        'firstname', 'lastname',
+        'sex', 'dob', 'occupation',
+        'password',
     ];
 
     /**
@@ -24,6 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function age() {
+        return $this->dob()->diff(
+            Carbon::now()
+        )->format('%y');
+    }
 
     public function dob() {
         return Carbon::parse($this->dob);

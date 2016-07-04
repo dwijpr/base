@@ -77,8 +77,8 @@
                         </div>
                         <div>
                             <i class="fa fa-btn fa-birthday-cake"></i>
-                            {{ Auth::user()->dob()->format('M d, Y') }}
-                            (25 y.o.)
+                            {{ Auth::user()->dob()->format('F d, Y') }}
+                            ({{ Auth::user()->age() }} y.o.)
                         </div>
                     </div>
                 </div>

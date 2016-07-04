@@ -70,10 +70,28 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
+        $id = $request->user()->id;
         $this->validate($request, [
-            'firstname' => 'required',
-            'lastname' => 'required',
+            'username' => 'required|max:50|unique:users,username'
+                .($id ? ",$id,id" : ''),
+            'email' => 'required|max:255|unique:users,email'
+                .($id ? ",$id,id" : ''),
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'sex' => 'required',
+            'dob' => 'required|date_format:Y-m-d',
+            'occupation' => 'required|max:255',
         ]);
+        $request->user()->update([
+            'username' => $request->username,
+            'email' => $request->email,
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'sex' => $request->sex,
+            'dob' => $request->dob,
+            'occupation' => $request->occupation,
+        ]);
+        return redirect('/profile');
     }
 
     /**
