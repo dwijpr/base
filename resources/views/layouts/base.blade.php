@@ -39,6 +39,7 @@
             background: #222;
             @endif
         }
+
         @if(config('app.dark'))
         * {
             color: #ddd;
@@ -46,20 +47,46 @@
         .panel, .table {
             background: #444;
         }
-        .table tr:hover td{
+        .table.table-hover tr:hover td{
             color: #222;
         }
+        .well {
+            background: #555;
+        }
+        @else
+        hr {
+            border-color: #aaa;
+        }
         @endif
+
         .fa-btn {
             margin-right: 6px;
         }
+
         a.no, a.no:hover {
             text-decoration: none;
             display: inline-block;
             padding: 0 4px;
         }
+
         footer {
             padding: 32px 0;
+        }
+
+        table {
+            font-size: 14px;
+        }
+
+        .truncate {
+            position: relative;
+            top: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        [class*="numeral-"] {
+            font-family: monospace;
         }
     </style>
     @yield('style')
@@ -80,5 +107,6 @@
             </div>
         </div>
     </div>
+    @yield('script')
 </body>
 </html>

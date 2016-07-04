@@ -3,7 +3,7 @@
 @section('_style')
 <style>
     .content-wrapper {
-        padding-top: 64px;
+        padding-top: 32px;
     }
     .profile img.main {
         background: #999;
@@ -20,6 +20,9 @@
         letter-spacing: .075em;
         font-weight: 100;
     }
+    #profile-details-toggle i.fa {
+        font-size: 24px;
+    }
 </style>
 @endsection
 
@@ -35,12 +38,59 @@
                             src="{{ Auth::user()->img() }}"
                         >
                         <h1 class="main">{{ Auth::user()->name() }}</h1>
-                        <h4><b>{{ '@'.Auth::user()->username }}</b></h4>
+                        <h4>
+                            <i
+                                class="fa fa-btn fa-{{
+                                    Auth::user()->sex?'mars':'venus'
+                                }}"
+                            ></i>
+                            <b>{{ '@'.Auth::user()->username }}</b>
+                        </h4>
                         <h3 class="main">{{ Auth::user()->occupation }}</h3>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <div
+                        class="well"
+                        id="profile-details"
+                        style="display: none;"
+                    >
+                        <div>
+                            <i class="fa fa-btn fa-map-marker"></i>
+                            Bandung, Indonesia
+                        </div>
+                        <div>
+                            <i class="fa fa-btn fa-birthday-cake"></i>
+                            25 y.o.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a
+                    id="profile-details-toggle"
+                    href="javascript:"
+                ><i class="fa fa-caret-down"></i></a>
+            </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+<script>
+    $("#profile-details-toggle").click(function () {
+        $("#profile-details").slideToggle();
+        var fa = $(this).find('i.fa');
+        if (fa.hasClass('fa-caret-down')) {
+            fa.removeClass('fa-caret-down');
+            fa.addClass('fa-caret-up');
+        } else {
+            fa.removeClass('fa-caret-up');
+            fa.addClass('fa-caret-down');
+        }
+    });
+</script>
 @endsection
