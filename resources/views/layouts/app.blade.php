@@ -5,6 +5,9 @@
     body {
         padding-top: 50px;
     }
+    .gap {
+        padding-top: 24px;
+    }
     .navbar-pic {
         background: #999;
         padding: 2px;
