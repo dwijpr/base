@@ -60,6 +60,23 @@
             </label>    
         </div>
     </div>
+    <div class="form-group{{ $errors->has('dob') }}">
+        {{ Form::label('dob', 'Date of Birth', [
+            'class' => 'control-label col-sm-4',
+            'for' => 'dob',
+        ]) }}
+        <div class="col-sm-3">
+            {{ Form::text('dob', Auth()->user()->dob, [
+                'class' => 'form-control datepicker',
+                'id' => 'dob',
+            ]) }}
+            @if($errors->has('dob'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('dob') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
     <div class="form-group">
         <div class="col-sm-6 col-sm-offset-4">
             <button class="btn btn-primary">

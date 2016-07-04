@@ -93,6 +93,7 @@
     {{ Html::script('js/app.js') }}
     {{ Html::script('thirdparty/jquery-2.2.4.js') }}
     {{ Html::script('thirdparty/bootstrap/3.3.6/js/bootstrap.js') }}
+    @yield('head')
 </head>
 <body id="app-layout">
     @yield('_content')
