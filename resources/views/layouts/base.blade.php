@@ -88,6 +88,10 @@
         [class*="numeral-"] {
             font-family: monospace;
         }
+
+        h1, h2, h3 {
+            font-weight: 100;
+        }
     </style>
     @yield('style')
     {{ Html::script('js/app.js') }}
@@ -102,7 +106,7 @@
             <div class="col-sm-12 text-center">
                 <footer>
                     <a href="{{ url('') }}">
-                        &copy;{{ date('Y') }} {{ config('app.name') }}
+                        <b>&copy;{{ date('Y') }} {{ config('app.name') }}</b>
                     </a>
                 </footer>
             </div>

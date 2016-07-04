@@ -4,7 +4,7 @@ return [
 
     'name' => 'Base',
 
-    'dark' => true,
+    'dark' => !true,
 
     'sex' => [
         0 => 'female',
