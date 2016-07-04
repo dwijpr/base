@@ -8,10 +8,26 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+    <style>
+        @font-face {
+            font-family: 'Lato';
+            src: url(thirdparty/fonts/Lato/Lato-Regular.ttf);
+        }
+        @font-face {
+            font-family: 'Lato';
+            src: url(thirdparty/fonts/Lato/Lato-Hairline.ttf);
+            font-weight: 100;
+        }
+        @font-face {
+            font-family: 'Lato';
+            src: url(thirdparty/fonts/Lato/Lato-Bold.ttf);
+            font-weight: bold;
+        }
+    </style>
+    {{ Html::style(
+        'thirdparty/font-awesome/4.6.3/css/font-awesome.css'
+    ) }}
 
-    <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <style>
