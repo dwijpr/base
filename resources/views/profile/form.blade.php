@@ -54,6 +54,7 @@
             {{ Form::text('firstname', Auth()->user()->firstname, [
                 'class' => 'form-control',
                 'id' => 'firstname',
+                'placeholder' => 'First',
             ]) }}
             @if($errors->has('firstname'))
                 <span class="help-block">
@@ -65,6 +66,7 @@
             {{ Form::text('lastname', Auth()->user()->lastname, [
                 'class' => 'form-control',
                 'id' => 'lastname',
+                'placeholder' => 'Last',
             ]) }}
             @if($errors->has('lastname'))
                 <span class="help-block">

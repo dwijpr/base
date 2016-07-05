@@ -20,7 +20,7 @@
                     @foreach($objects as $i => $o)
                         <tr>
                             <td>{{ $i+1 }}</td>
-                            <td>{{ $o->name }}</td>
+                            <td>{{ $o->name() }}</td>
                             <td>{{ $o->email }}</td>
                             <td>
                                 <a

@@ -54,16 +54,23 @@
                         <h1 class="main">{{ Auth::user()->name() }}</h1>
                         <h4>
                             <i
-                                class="fa fa-btn fa-{{
+                                class="fa{{
+                                    (@Auth::user()->username?' fa-btn':'')
+                                }} fa-{{
                                     Auth::user()->sex?'mars':'venus'
                                 }}"
                             ></i>
+                            @if(@Auth::user()->username)
                             <b>{{ '@'.Auth::user()->username }}</b>
+                            @endif
                         </h4>
                         <h3 class="main">{{ Auth::user()->occupation }}</h3>
                     </div>
                 </div>
             </div>
+            @if(
+                Auth::user()->age() < date('Y')
+            )
             <div class="row">
                 <div class="col-md-offset-4 col-md-4">
                     <div
@@ -71,10 +78,6 @@
                         id="profile-details"
                         style="display: none;"
                     >
-                        <div>
-                            <i class="fa fa-btn fa-map-marker"></i>
-                            Bandung, Indonesia
-                        </div>
                         <div>
                             <i class="fa fa-btn fa-birthday-cake"></i>
                             {{ Auth::user()->dob()->format('F d, Y') }}
@@ -89,6 +92,7 @@
                     href="javascript:"
                 ><i class="fa fa-caret-down"></i></a>
             </div>
+            @endif
         </div>
     </div>
 </div>
@@ -96,16 +100,20 @@
 
 @section('script')
 <script>
-    $("#profile-details-toggle").click(function () {
-        $("#profile-details").toggle();
-        var fa = $(this).find('i.fa');
-        if (fa.hasClass('fa-caret-down')) {
-            fa.removeClass('fa-caret-down');
-            fa.addClass('fa-caret-up');
-        } else {
-            fa.removeClass('fa-caret-up');
-            fa.addClass('fa-caret-down');
-        }
-    });
+$(function() {
+    if ($("#profile-details-toggle").length > 0) {
+        $("#profile-details-toggle").click(function () {
+            $("#profile-details").toggle();
+            var fa = $(this).find('i.fa');
+            if (fa.hasClass('fa-caret-down')) {
+                fa.removeClass('fa-caret-down');
+                fa.addClass('fa-caret-up');
+            } else {
+                fa.removeClass('fa-caret-up');
+                fa.addClass('fa-caret-down');
+            }
+        });
+    }
+});
 </script>
 @endsection

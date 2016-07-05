@@ -64,29 +64,12 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        // $username = $this->createUsername(
-        //     $data['firstname'], $data['lastname']
-        // );
         return User::create([
-            // 'username' => $username,
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'sex' => $data['sex'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-    }
-
-    function createUsername($first, $last) {
-        $available = false;
-        $first = strtolower($first);
-        $last = strtolower($last);
-        $frasa = [
-            'first' => [],
-            'last' => [],
-        ];
-        while (!$available) {
-
-        }
     }
 }
