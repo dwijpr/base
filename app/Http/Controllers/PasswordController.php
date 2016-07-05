@@ -36,6 +36,6 @@ class PasswordController extends Controller
         $user->update([
             'password' => bcrypt($request->password),
         ]);
-        return redirect('/home');
+        return redirect('/');
     }
 }
