@@ -8,12 +8,25 @@
     .gap {
         padding-top: 24px;
     }
-    .navbar-pic {
-        background: #999;
-        padding: 2px;
+    .navbar-default .navbar-nav > li > a.user-nav{
+        position: relative;
+        padding-left: 48px;
+    }
+    .navbar-default .navbar-nav > li > a.user-nav .navbar-pic{
+        position: absolute;
+        top: 8px;
+        left: 12px;
         border-radius: 2px;
-        max-width: 18px;
-        max-height: 18px;
+        border: 1px solid #999;
+        background: #efefef;
+        padding: 2px;
+        max-width: 26px;
+        max-height: 26px;
+    }
+    @media (min-width: 768px) {
+        .navbar-default .navbar-nav > li > a.user-nav .navbar-pic{
+            top: 12px;
+        }
     }
 </style>
 @yield('_style')
@@ -55,10 +68,11 @@
                     <li><a href="{{ url('/login') }}">Login</a></li>
                     <li><a href="{{ url('/register') }}">Register</a></li>
                 @else
+                    <li><a href="{{ url('/register') }}">Register</a></li>
                     <li class="dropdown">
                         <a
                             href="#"
-                            class="dropdown-toggle"
+                            class="dropdown-toggle user-nav"
                             data-toggle="dropdown"
                             role="button"
                             aria-expanded="false"

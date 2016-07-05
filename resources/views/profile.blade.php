@@ -7,9 +7,10 @@
         position: relative;
     }
     .profile img.main {
-        background: #999;
-        width: 128px;
         border-radius: 50%;
+        border: 1px solid #999;
+        background: #efefef;
+        width: 128px;
         padding: 4px;
     }
     .profile h1.main {

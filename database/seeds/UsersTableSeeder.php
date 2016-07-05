@@ -41,7 +41,7 @@ class UsersTableSeeder extends Seeder
                 'lastname' => 'Owl',
                 'dob' => '1998-08-08',
                 'city' => 'San Francisco',
-                'occupation' => 'Mistery In The Dark',
+                'occupation' => 'System Admin',
                 'username' => 'ost',
                 'email' => 'owlpre@gmail.com',
                 'password' => '$2y$10$8IBQqmfsU4z7Qkq449J8O.298ilUiXE6iwzbznxmIC70qZMrGfpOa',
