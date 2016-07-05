@@ -77,7 +77,6 @@ class ProfileController extends Controller
             'email' => 'required|max:255|unique:users,email'
                 .($id ? ",$id,id" : ''),
             'firstname' => 'required|max:255',
-            'lastname' => 'required|max:255',
             'sex' => 'required',
             'dob' => 'required|date_format:Y-m-d',
             'occupation' => 'required|max:255',

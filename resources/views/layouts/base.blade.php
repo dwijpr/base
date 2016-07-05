@@ -88,6 +88,9 @@
         [class*="numeral-"] {
             font-family: monospace;
         }
+        [class*="ui-datepicker-"] {
+            color: #333;
+        }
 
         h1, h2, h3 {
             font-weight: 100;
