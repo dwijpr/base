@@ -3,7 +3,7 @@
 @section('_style')
 <style>
     .content-wrapper {
-        padding-top: 32px;
+        padding-top: 64px;
         position: relative;
     }
     .profile img.main {
@@ -61,6 +61,13 @@
                                     Auth::user()->sex?'mars':'venus'
                                 }}"
                             ></i>
+                            @if(
+                                Auth::user()->age() < date('Y')
+                            )
+                                <span style="padding-right: 8px;">
+                                    {{ Auth::user()->age() }} y.o.
+                                </span>
+                            @endif
                             @if(@Auth::user()->username)
                             <b>{{ '@'.Auth::user()->username }}</b>
                             @endif
@@ -69,52 +76,7 @@
                     </div>
                 </div>
             </div>
-            @if(
-                Auth::user()->age() < date('Y')
-            )
-            <div class="row">
-                <div class="col-md-offset-4 col-md-4">
-                    <div
-                        class="well"
-                        id="profile-details"
-                        style="display: none;"
-                    >
-                        <div>
-                            <i class="fa fa-btn fa-birthday-cake"></i>
-                            {{ Auth::user()->dob()->format('F d, Y') }}
-                            ({{ Auth::user()->age() }} y.o.)
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <a
-                    id="profile-details-toggle"
-                    href="javascript:"
-                ><i class="fa fa-caret-down"></i></a>
-            </div>
-            @endif
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
-<script>
-$(function() {
-    if ($("#profile-details-toggle").length > 0) {
-        $("#profile-details-toggle").click(function () {
-            $("#profile-details").toggle();
-            var fa = $(this).find('i.fa');
-            if (fa.hasClass('fa-caret-down')) {
-                fa.removeClass('fa-caret-down');
-                fa.addClass('fa-caret-up');
-            } else {
-                fa.removeClass('fa-caret-up');
-                fa.addClass('fa-caret-down');
-            }
-        });
-    }
-});
-</script>
 @endsection
