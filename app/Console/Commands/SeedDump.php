@@ -45,7 +45,10 @@ class SeedDump extends Command
         foreach ($tables as $i => $table) {
             $name = $table->{'Tables_in_'.$db_name};
             $this->line("- ".$name);
-            if ($name === 'migrations') {
+            $skips = [
+                'migrations', 'logs',
+            ];
+            if (in_array($name, $skips)) {
                 $this->line('!! skipping migrations table');
             } else {
                 $items[] = $name;

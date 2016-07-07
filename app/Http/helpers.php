@@ -1,5 +1,21 @@
 <?php
 
+if (!function_exists('l')) {
+    function l($key, $object = []) {
+        $stringObject = json_encode($object);
+        \App\Log::create([
+            'user_id' => @auth()->user()->id,
+            'key' => $key,
+            'uri' => request()->getRequestUri(),
+            'method' => request()->getMethod(),
+            'user_agent' => request()->header('User-Agent'),
+            'ip_address' => request()->ip(),
+            'app' => config('app.name'),
+            'data' => $stringObject,
+        ]);
+    }
+}
+
 /*
  * http://stackoverflow.com/questions/5249279/file-get-contents-php-fatal-error-allowed-memory-exhausted/5249971#5249971
  */
