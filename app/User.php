@@ -16,7 +16,7 @@ class User extends Authenticatable
         'username', 'email',
         'firstname', 'lastname',
         'sex', 'dob', 'occupation',
-        'password',
+        'password', 'img',
     ];
 
     /**
@@ -39,6 +39,9 @@ class User extends Authenticatable
     }
 
     public function img() {
+        if ($this->img) {
+            return url($this->img);
+        }
         return asset('img/icon-'.config('app.sex')[$this->sex].'.svg');
     }
 

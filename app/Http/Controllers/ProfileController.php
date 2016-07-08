@@ -68,6 +68,15 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function updateImg(Request $request)
+    {
+        $id = $request->user()->id;
+        $request->user()->update([
+            'img' => $request->img,
+        ]);
+        return redirect('/profile');
+    }
+
     public function update(Request $request)
     {
         $id = $request->user()->id;

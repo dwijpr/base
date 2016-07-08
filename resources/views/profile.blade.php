@@ -1,17 +1,11 @@
 @extends('layouts.app')
 
-@section('_style')
+@section('style')
+@parent
 <style>
     .content-wrapper {
         padding-top: 64px;
         position: relative;
-    }
-    .profile img.main {
-        border-radius: 50%;
-        border: 1px solid #999;
-        background: #efefef;
-        width: 128px;
-        padding: 4px;
     }
     .profile h1.main {
         letter-spacing: .275em;
@@ -29,6 +23,24 @@
         position: absolute;
         top: 16px;
         right: 0;
+    }
+
+    div.img-main {
+        display: inline-block;
+        width: 128px;
+        height: 128px;
+        margin: 12px;
+        border: 1px solid #ddd;
+
+        background-image: url({{ Auth()->user()->img() }});
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+
+        border-radius: 50%;
     }
 </style>
 @endsection
@@ -48,10 +60,7 @@
                 </a>
                 <div class="profile">
                     <div class="profile-display text-center">
-                        <img
-                            class="main"
-                            src="{{ Auth::user()->img() }}"
-                        >
+                        <div class="img-main"></div>
                         <h1 class="main">{{ Auth::user()->name() }}</h1>
                         <h4>
                             <i

@@ -43,6 +43,10 @@ $router->patch('/profile', [
     'uses' => 'ProfileController@update',
     'middleware' => 'auth',
 ]);
+$router->patch('/profile/img', [
+    'uses' => 'ProfileController@updateImg',
+    'middleware' => 'auth',
+]);
 
 Route::group([
     'middleware' => ['auth', 'roles'],

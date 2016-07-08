@@ -1,9 +1,27 @@
 {!! Form::open([
+    'url' => '/profile/img',
+    'method' => 'PATCH',
+    'class' => 'form-horizontal',
+    'role' => 'form',
+    'id' => 'form-img',
+]) !!}
+    <input type="hidden" name="img" id="img">
+{{ Form::close() }}
+
+{!! Form::open([
     'url' => '/profile',
     'method' => 'PATCH',
     'class' => 'form-horizontal',
     'role' => 'form',
 ]) !!}
+    <div
+        class="text-center user-img-wrapper"
+        data-toggle="modal"
+        data-target="#myModal"
+    >
+        <div class="user-img"></div>
+        <h3>Change</h3>
+    </div>
     <div class="form-group{{ $errors->has('username')?' has-error':'' }}">
         {{ Form::label('username', 'Username', [
             'class' => 'control-label col-sm-4',
