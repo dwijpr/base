@@ -24,7 +24,7 @@
         width: 26px;
         height: 26px;
 
-        background-image: url({{ Auth::user()->img('xs') }});
+        background-image: url({{ url(Auth::user()->img('xs')) }});
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;

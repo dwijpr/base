@@ -40,9 +40,9 @@ class User extends Authenticatable
 
     public function img($opt = '') {
         if ($this->img) {
-            return url($this->img).'/'.$opt;
+            return $this->img.'/'.$opt;
         }
-        return asset('img/icon-'.config('app.sex')[$this->sex].'.svg');
+        return 'img/icon-'.config('app.sex')[$this->sex].'.svg';
     }
 
     public function name() {
