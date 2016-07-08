@@ -130,7 +130,7 @@ $(function() {
                     var img = $($("#img-tpl")[0]).clone(false).removeAttr('id');
                     var src = response.data[i].sm;
                     img.css('background-image', 'url({{ url('/') }}'+src+')');
-                    $("#img-list").prepend(img);
+                    $("#img-list").append(img);
                     img.data('src', response.data[i]._);
                 }
             } else {
