@@ -38,18 +38,23 @@ class SeedDump extends Command
      */
     public function handle()
     {
-        $tables = DB::select('show tables');
+        $db = config('database.connections.mysql.database');
+        $ignores = config('database.connections.mysql.ignores');
+        $query = "show tables where Tables_in_$db not like '%migrations'";
+        foreach ($ignores as $prefix) {
+            $query .= " and Tables_in_$db not like '{$prefix}%'";
+        }
+        $tables = DB::select($query);
         $this->info('tables list:');
         $items = [];
-        $db_name = config('database.connections.mysql.database');
         foreach ($tables as $i => $table) {
-            $name = $table->{'Tables_in_'.$db_name};
+            $name = $table->{'Tables_in_'.$db};
             $this->line("- ".$name);
             $skips = [
-                'migrations', 'logs',
+                'logs',
             ];
             if (in_array($name, $skips)) {
-                $this->line('!! skipping migrations table');
+                $this->line("!! skipping $name table");
             } else {
                 $items[] = $name;
             }

@@ -64,6 +64,9 @@ return [
             'prefix' => '',
             'strict' => false,
             'engine' => null,
+            'ignores' => [
+                'app_', 'piro_', 'imgs_',
+            ],
         ],
 
         'pgsql' => [

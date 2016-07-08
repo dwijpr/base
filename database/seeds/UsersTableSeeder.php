@@ -28,9 +28,9 @@ class UsersTableSeeder extends Seeder
                 'username' => 'dp',
                 'email' => 'dwijpr@gmail.com',
                 'password' => '$2y$10$53z79ExyRu1Pb/e6TSjYpuyOksnGoOV741MjQtAhpbe5VatWhJ1ka',
-                'remember_token' => 'lmmNRmlmdfHwmawZQejjV0baGKTYhPsq5n9552doPBWHGsUJ1JetlSLqbjx7',
+                'remember_token' => 's8r6qJFI4BUNEFAfzc1WAoFsDCAXNQMomQmpX1ioLSamGGndDyqmeR3uMw8K',
                 'created_at' => '2016-06-26 19:24:39',
-                'updated_at' => '2016-07-02 07:51:17',
+                'updated_at' => '2016-07-08 12:48:44',
             ),
             1 => 
             array (
