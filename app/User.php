@@ -38,9 +38,9 @@ class User extends Authenticatable
         return Carbon::parse($this->dob);
     }
 
-    public function img() {
+    public function img($opt = '') {
         if ($this->img) {
-            return url($this->img);
+            return url($this->img).'/'.$opt;
         }
         return asset('img/icon-'.config('app.sex')[$this->sex].'.svg');
     }

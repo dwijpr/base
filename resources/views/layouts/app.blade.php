@@ -24,7 +24,7 @@
         width: 26px;
         height: 26px;
 
-        background-image: url({{ Auth::user()->img().'/xs' }});
+        background-image: url({{ Auth::user()->img('xs') }});
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -93,7 +93,6 @@
                                 >
                                     <div
                                         class="navbar-pic"
-                                        src="{{ Auth::user()->img() }}"
                                     ></div>
                                     {{ Auth::user()->name() }}
                                     <span class="caret"></span>
