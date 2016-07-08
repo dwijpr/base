@@ -36,7 +36,7 @@
         margin: 12px;
         border: 1px solid #ddd;
 
-        background-image: url({{ Auth()->user()->img() }});
+        background-image: url({{ Auth()->user()->img().'/sm' }});
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -46,6 +46,7 @@
     }
 
     .img {
+        opacity: .6;
         position: relative;
         padding: 0;
         border: 2px solid white;
@@ -55,6 +56,9 @@
         background-size: cover;
         background-position: 50% 50%;
         background-repeat: no-repeat;
+    }
+    .img:hover {
+        opacity: 1;
     }
     @media (min-width: 768px) {
         .img {
@@ -127,7 +131,7 @@ $(function() {
                     var src = response.data[i].sm;
                     img.css('background-image', 'url({{ url('/') }}'+src+')');
                     $("#img-list").prepend(img);
-                    img.data('src', response.data[i].md);
+                    img.data('src', response.data[i]._);
                 }
             } else {
                 $("#img-list").html(

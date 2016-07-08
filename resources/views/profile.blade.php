@@ -32,7 +32,7 @@
         margin: 12px;
         border: 1px solid #ddd;
 
-        background-image: url({{ Auth()->user()->img() }});
+        background-image: url({{ Auth()->user()->img().'/sm' }});
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
