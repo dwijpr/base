@@ -11,16 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'uses' => function () {
+        return view('welcome');
+    },
+    'middleware' => 'guest',
+]);
 
 Route::auth();
 
-// $router->get('/home', [
-//     'uses' => 'HomeController@index',
-//     'middleware' => 'auth',
-// ]);
+$router->get('/home', [
+    'uses' => 'HomeController@index',
+    'middleware' => 'auth',
+]);
 
 $router->get('/password/change', [
     'uses' => 'PasswordController@edit',

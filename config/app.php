@@ -2,7 +2,9 @@
 
 return [
 
-    'name' => 'Base',
+    'name' => env('APP_NAME', 'Base'),
+
+    'fa_icon' => env('APP_FA_ICON', 'globe'),
 
     'dark' => !true,
 
