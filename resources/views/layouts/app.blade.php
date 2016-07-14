@@ -129,6 +129,15 @@
     </div>
 </nav>
 @yield('content')
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <footer>
+                <a href="{{ url('') }}">
+                    <b>&copy;{{ date('Y') }} {{ config('app.name') }}</b>
+                </a>
+            </footer>
+        </div>
+    </div>
+</div>
 @endsection
-</body>
-</html>

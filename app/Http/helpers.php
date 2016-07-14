@@ -1,5 +1,17 @@
 <?php
 
+if (!function_exists('r_script')) {
+    function r_script($path) {
+        return Html::script(url($path));
+    }
+}
+
+if (!function_exists('r_style')) {
+    function r_style($path) {
+        return Html::style(url($path));
+    }
+}
+
 if (!function_exists('l')) {
     function l($key, $object = []) {
         $stringObject = json_encode($object);
