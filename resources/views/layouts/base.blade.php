@@ -5,12 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name') }}</title>
-    {{ r_style(
-        '/thirdparty/font-awesome/4.6.3/css/font-awesome.css'
-    ) }}
-    {{ r_style(
-        'thirdparty/bootstrap/3.3.6/css/bootstrap.css'
-    ) }}
+    {{ r_style('/thirdparty/font-awesome/4.6.3/css/font-awesome.css') }}
+    {{ r_style('thirdparty/bootstrap/3.3.6/css/bootstrap.css') }}
     @include('layouts.base.style')
     @yield('style')
     {{ r_script('js/app.js') }}
