@@ -17,3 +17,17 @@ function confirmSubmit( element )
     }
     return 0;
 }
+
+function initClipboardJs(selector) {
+    if (selector === undefined) {
+        selector = '.clipboard';
+    }
+    var clipboard = new Clipboard(selector);
+    clipboard.on('success', function (e) {
+        var origText = $(e.trigger).text();
+        $(e.trigger).text('copied!');
+        setTimeout(function () {
+            $(e.trigger).text(origText);
+        }, 500);
+    });
+}
