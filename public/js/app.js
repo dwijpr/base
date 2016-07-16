@@ -24,10 +24,10 @@ function initClipboardJs(selector) {
     }
     var clipboard = new Clipboard(selector);
     clipboard.on('success', function (e) {
-        var origText = $(e.trigger).text();
+        var origHtml = $(e.trigger).html();
         $(e.trigger).text('copied!');
         setTimeout(function () {
-            $(e.trigger).text(origText);
+            $(e.trigger).html(origHtml);
         }, 500);
     });
 }
