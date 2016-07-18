@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('refresh-csrf', function () {
+    return csrf_token();
+});
+
 Route::get('/', [
     'uses' => function () {
         return view('welcome');
