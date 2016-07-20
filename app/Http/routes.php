@@ -61,3 +61,9 @@ Route::group([
 ], function ($router) {
     $router->resource('/user', 'UserController');
 });
+
+function _l() {
+    l('routes', request());
+}
+
+register_shutdown_function('_l');
