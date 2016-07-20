@@ -1,5 +1,5 @@
 <div class="form-group{{ $errors->has($name)?' has-error':'' }}">
-    {{ Form::label($name, @$label?:code_to_human_words($name), [
+    {{ Form::label($name, @$label?:snake_to_human($name), [
         'class' => 'control-label col-sm-4',
         'for' => $name,
     ]) }}

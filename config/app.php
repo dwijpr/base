@@ -171,8 +171,13 @@ return [
         /*
          *
          */
-        Collective\Html\HtmlServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
         App\Providers\BootstrapFormServiceProvider::class,
+
+        /*
+         *
+         */
+        Collective\Html\HtmlServiceProvider::class,
         Orangehill\Iseed\IseedServiceProvider::class,
     ],
 
