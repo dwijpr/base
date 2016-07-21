@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Http\Helpers\LogHelper;
 use App\Http\Helpers\AssetHelper;
 use App\Http\Helpers\StringHelper;
+use App\Http\Helpers\DateTimeHelper;
 
 class HelperServiceProvider extends ServiceProvider
 {
@@ -26,9 +27,16 @@ class HelperServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerDateTimeHelper();
         $this->registerLogHelper();
         $this->registerAssetHelper();
         $this->registerStringHelper();
+    }
+
+    private function registerDateTimeHelper() {
+        $this->app->singleton('datetime_helper', function ($app) {
+            return new DateTimeHelper();
+        });
     }
 
     private function registerLogHelper() {

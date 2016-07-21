@@ -1,6 +1,16 @@
 <?php
 
 /*
+ * DateTimeHelper
+ */
+
+if (!function_exists('year_months')) {
+    function year_months($end, $start) {
+        return app('datetime_helper')->yearMonths($end, $start);
+    }
+}
+
+/*
  * LogHelper
  */
 
