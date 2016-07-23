@@ -46,6 +46,9 @@ class User extends Authenticatable
     }
 
     public function name() {
+        if (!$this->firstname and !$this->lastname) {
+            return "No Name";
+        }
         return implode(' ', [
             $this->firstname, $this->lastname,
         ]);

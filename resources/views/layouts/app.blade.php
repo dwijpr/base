@@ -84,6 +84,13 @@
                                 <a href="{{ url('/register') }}">Register</a>
                             </li>
                         @else
+                            @if(Auth::user()->hasRole('admin'))
+                            <li>
+                                <a href="{{ url('/user') }}">
+                                    Manage Users
+                                </a>
+                            </li>
+                            @endif
                             <li class="dropdown">
                                 <a
                                     href="#"

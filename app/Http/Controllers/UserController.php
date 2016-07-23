@@ -45,12 +45,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6',
         ]);
         $user = User::create([
-            'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);
@@ -90,8 +88,10 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        $id = $user->id;
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users,email'
+                .($id ? ",$id,id" : ''),
             'password' => 'required|min:6',
         ]);
         $user->update($request->all());

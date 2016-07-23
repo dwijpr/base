@@ -4,10 +4,7 @@
     'class' => 'form-horizontal',
     'role' => 'form',
 ]) !!}
-    {{ Form::bsText('name', @$object->name) }}
-    @if(!@$object)
     {{ Form::bsText('email', @$object->email) }}
-    @endif
     {{ Form::bsPassword('password') }}
     <div class="form-group">
         <div class="col-sm-6 col-sm-offset-4">
