@@ -15,6 +15,18 @@ class HelperTest extends TestCase
      */
     public function testExample()
     {
+        $this->fileHelper();
+        $this->dateTimeHelper();
+    }
+
+    private function fileHelper() {
+        $test = [
+            'sample.php', 'sample'
+        ];
+        $this->assertEquals($test[1], strip_ext($test[0]));
+    }
+
+    private function dateTimeHelper() {
         $year_months = year_months(
             Carbon::parse('2016-07-21')
             , Carbon::parse('2016-06-20')
