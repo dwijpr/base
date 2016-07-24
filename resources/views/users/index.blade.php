@@ -32,12 +32,14 @@
                                 {{ Form::open([
                                     'url' => 'user/'.$o->id,
                                     'method' => 'DELETE',
-                                    'style' => 'display: inline;'
+                                    'style' => 'display: inline;',
+                                    'onsubmit' =>
+                                        'return confirm("Are You Sure?")',
                                 ]) }}
                                     <a
                                         href="javascript:"
                                         class="no"
-                                        onclick="confirmSubmit(this)"
+                                        onclick="asButton(this)"
                                     >
                                         <i class="fa fa-trash"></i>
                                     </a>
