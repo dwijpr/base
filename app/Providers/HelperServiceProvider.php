@@ -8,6 +8,7 @@ use App\Http\Helpers\AssetHelper;
 use App\Http\Helpers\StringHelper;
 use App\Http\Helpers\DateTimeHelper;
 use App\Http\Helpers\FileHelper;
+use App\Http\Helpers\MDHelper;
 
 class HelperServiceProvider extends ServiceProvider
 {
@@ -28,11 +29,18 @@ class HelperServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerMDHelper();
         $this->registerFileHelper();
         $this->registerDateTimeHelper();
         $this->registerLogHelper();
         $this->registerAssetHelper();
         $this->registerStringHelper();
+    }
+
+    private function registerMDHelper() {
+        $this->app->singleton('md_helper', function($app) {
+            return new MDHelper();
+        });
     }
 
     private function registerFileHelper() {

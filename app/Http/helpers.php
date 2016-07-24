@@ -1,8 +1,25 @@
 <?php
 
 /*
+ * MDHelper
+ */
+
+if (!function_exists('md_to_html_title')) {
+    function md_to_html_title($text) {
+        return app('md_helper')->toHtml($text, true);
+    }
+}
+
+if (!function_exists('md_to_html')) {
+    function md_to_html($text) {
+        return app('md_helper')->toHtml($text);
+    }
+}
+
+/*
  * FileHelper
  */
+
 if (!function_exists('strip_ext')) {
     function strip_ext($filepath) {
         return app('file_helper')->stripExt($filepath);
