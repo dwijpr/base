@@ -1,6 +1,16 @@
 <?php
 
 /*
+ * HtmlHelper
+ */
+
+if (!function_exists('get_first_p')) {
+    function get_first_p($html) {
+        return app('html_helper')->firstP($html);
+    }
+}
+
+/*
  * MDHelper
  */
 
